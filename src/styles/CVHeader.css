@@ -1,0 +1,24 @@
+header {
+    background-color: #1c3769;
+    width: 100%;
+    margin: .5rem auto;
+    padding: .5rem;
+    color: #fff;
+}
+
+.first-name,
+.last-name {
+    display: inline-block;
+    margin: 0 .5rem;
+    font-size: 2.5rem;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.edit-header-info input {
+    margin: .5rem;
+    padding: .5rem;
+}
