@@ -1,0 +1,18 @@
+#cv-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+}
+
+.section-main {
+    width: 70%;
+    background-color: thistle;
+    padding: .5rem;
+}
+
+.section-aside {
+    width: 20%;
+    background-color: burlywood;
+    padding: .5rem;
+}
