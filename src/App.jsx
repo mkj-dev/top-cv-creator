@@ -1,13 +1,13 @@
 import './styles/App.css'
 import CVHeader from './components/CVHeader'
+import CVMain from './components/CVMain'
 
-function App() {
+export default function App() {
 
   return (
     <div className="App">
       <CVHeader />
+      <CVMain />
     </div>
-  )
+  );
 }
-
-export default App
