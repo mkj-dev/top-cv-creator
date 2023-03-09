@@ -1,17 +1,17 @@
-#cv-main {
+#cv-document {
     width: 100%;
     display: flex;
     justify-content: space-around;
     background-color: cadetblue;
 }
 
-.section-main {
+.cv-main-section{
     width: 70%;
     background-color: thistle;
     padding: .5rem;
 }
 
-.section-aside {
+.cv-aside-section {
     width: 20%;
     background-color: burlywood;
     padding: .5rem;
