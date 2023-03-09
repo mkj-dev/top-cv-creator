@@ -1,6 +1,6 @@
 import '../styles/CVAside.css';
 
-export default function Main() {
+export default function CVAside() {
   return (
     <>
       <aside id='cv-aside'>
