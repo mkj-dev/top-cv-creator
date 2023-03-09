@@ -10,9 +10,20 @@ html, body {
     max-width: 1200px;
 }
 
-.edit-button {
+.edit-button, 
+.add-button,
+.remove-button,
+.cancel-button {
     cursor: pointer;
     padding: .5rem;
-    width: 100px;
+    width: fit-content;
     margin: .5rem;
+}
+
+.error {
+    font-size: 1.25rem;
+    color: #fff;
+    width: fit-content;
+    margin-left: .5rem;
+    color: #dd0a0a;
 }
