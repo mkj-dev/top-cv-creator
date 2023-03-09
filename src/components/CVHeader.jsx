@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/CVHeader.css';
 
-export default function Header() {
+export default function CVHeader() {
   const [firstName, setFirstName] = useState('First name');
   const [lastName, setLastName] = useState('Last name');
   const [jobTitle, setJobTitle] = useState('Job title');
