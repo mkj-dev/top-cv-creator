@@ -31,6 +31,7 @@ export default function CVExperience() {
       employedToDate: employedToDate,
       jobDescription: jobDescription
     };
+
     setWorkplaces([...workplaces, newWorkplace]);
     setCompanyName('');
     setEmployedSinceDate('');
@@ -45,7 +46,7 @@ export default function CVExperience() {
         {workplaces.map((workplace, index) => (
           <li key={index}>
             <p>{workplace.companyName}</p>
-            <p>{workplace.employedSinceDate} - {workplace.employedToDate}</p>
+            <p>{workplace.employedSinceDate} - {workplace.employedToDate.length > 0 ? workplace.employedToDate : 'Currently'}</p>
             <p>{workplace.jobDescription}</p>
           </li>
         ))}
@@ -54,44 +55,43 @@ export default function CVExperience() {
         <div className="experience-info-edit">
           <form action="#">
             <label htmlFor="company-name">Company name:</label>
-            <input 
+            <input
               type="text"
               id="company-name"
               name="company-name"
               placeholder="Company name..."
               value={companyName}
-              onChange={e => setCompanyName(e.target.value)} 
+              onChange={e => setCompanyName(e.target.value)}
             />
             <label htmlFor="employed-from">Employed since:</label>
-            <input 
-              type="date" 
-              id="employed-from" 
-              name="employed-from" 
-              value={employedSinceDate} 
-              onChange={e => setEmployedSinceDate(e.target.value)} 
+            <input
+              type="date"
+              id="employed-from"
+              name="employed-from"
+              value={employedSinceDate}
+              onChange={e => setEmployedSinceDate(e.target.value)}
             />
             <label htmlFor="employed-to">To:</label>
-            <input 
-              type="date" 
-              id="employed-to" 
-              name="employed-to" 
-              value={employedToDate} 
-              onChange={e => setEmployedToDate(e.target.value)} 
+            <input
+              type="date"
+              id="employed-to"
+              name="employed-to"
+              value={employedToDate}
+              onChange={e => setEmployedToDate(e.target.value)}
             />
             {/* Still working checkbox*/}
-            {/* TODO - If still working, change 'employed-to' value to the 'currently' string */}
-            <input 
-              type="checkbox" 
-              name="still-working" 
-              id="still-working" 
-              style={{display: 'inline-block'}}
+            <input
+              type="checkbox"
+              name="still-working"
+              id="still-working"
+              style={{ display: 'inline-block' }}
               onClick={handleIsWorking}
             />
             <label htmlFor="still-working">Current workplace</label>
             {/* Job description */}
-            <label htmlFor="job-description" style={{display: 'block'}}>Short job description:</label>
-            <textarea 
-              name="job-description" 
+            <label htmlFor="job-description" style={{ display: 'block' }}>Short job description:</label>
+            <textarea
+              name="job-description"
               id="job-description"
               cols="30"
               rows="10"
@@ -99,7 +99,7 @@ export default function CVExperience() {
               onChange={e => setJobDescription(e.target.value)}>
             </textarea>
             <button type="button" className='add-button' onClick={handleAddWorkplace}>Add new workplace</button>
-          {/* TODO - Add edit workplace information button */}
+            {/* TODO - Add edit workplace information button */}
           </form>
         </div>
       )}
