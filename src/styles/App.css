@@ -27,4 +27,5 @@ html, body {
     width: fit-content;
     margin-left: .5rem;
     color: #dd0a0a;
+    display: block;
 }
