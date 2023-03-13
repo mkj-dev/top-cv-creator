@@ -3,7 +3,12 @@ import '../styles/CVExperience.css';
 
 export default function CVExperience() {
   const [isEditable, setIsEditable] = useState(false);
-  const [workplaces, setWorkplaces] = useState([]);
+  const [workplaces, setWorkplaces] = useState([{
+    companyName: 'Company name',
+    employedSinceDate: 'Employed since',
+    employedToDate: 'Employed To',
+    jobDescription: 'Short job description.'
+  }]);
   const [companyName, setCompanyName] = useState('');
   const [employedSinceDate, setEmployedSinceDate] = useState('');
   const [employedToDate, setEmployedToDate] = useState('');
