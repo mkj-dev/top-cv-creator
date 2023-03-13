@@ -39,6 +39,12 @@ export default function CVExperience() {
     setJobDescription('');
   }
 
+  const handleDeleteWorkplace = (index) => {
+    const updatedWorkplaces = [...workplaces];
+    updatedWorkplaces.splice(index, 1);
+    setWorkplaces(updatedWorkplaces);
+  }
+
   return (
     <section className="experience-section">
       <h3 className="experience-title">Experience</h3>
@@ -48,6 +54,7 @@ export default function CVExperience() {
             <p>{workplace.companyName}</p>
             <p>{workplace.employedSinceDate} - {workplace.employedToDate.length > 0 ? workplace.employedToDate : 'Currently'}</p>
             <p>{workplace.jobDescription}</p>
+            <button type="button" className="delete-button" onClick={() => handleDeleteWorkplace(index)}>Delete</button>
           </li>
         ))}
       </ul>
