@@ -25,6 +25,11 @@ export default function CVExperience() {
   }
 
   const handleAddWorkplace = () => {
+    if (!companyName || !employedSinceDate || !jobDescription) {
+      alert('Please fill in all required fields');
+      return;
+    }
+
     const newWorkplace = {
       companyName: companyName,
       employedSinceDate: employedSinceDate,
@@ -102,11 +107,10 @@ export default function CVExperience() {
               id="job-description"
               cols="30"
               rows="10"
-              placeholder="Add short job description..."
+              placeholder="Add a short job description..."
               onChange={e => setJobDescription(e.target.value)}>
             </textarea>
             <button type="button" className='add-button' onClick={handleAddWorkplace}>Add new workplace</button>
-            {/* TODO - Add edit workplace information button */}
           </form>
         </div>
       )}
