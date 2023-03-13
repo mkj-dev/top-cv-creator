@@ -77,7 +77,6 @@ export default function CVExperience() {
               id="company-name"
               name="company-name"
               placeholder="Company name..."
-              value={companyName}
               onChange={e => setCompanyName(e.target.value)}
             />
             <label htmlFor="employed-from">Employed since:</label>
@@ -85,7 +84,6 @@ export default function CVExperience() {
               type="date"
               id="employed-from"
               name="employed-from"
-              value={employedSinceDate}
               onChange={e => setEmployedSinceDate(e.target.value)}
             />
             <label htmlFor="employed-to">To:</label>
@@ -93,7 +91,6 @@ export default function CVExperience() {
               type="date"
               id="employed-to"
               name="employed-to"
-              value={employedToDate}
               onChange={e => setEmployedToDate(e.target.value)}
             />
             {/* Still working checkbox*/}
