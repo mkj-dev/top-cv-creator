@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 export default function CVLanguages() {
   const [isEditable, setIsEditable] = useState(false);
   const [languageSkills, setLanguageSkills] = useState(['English - B2', 'Spanish - A1']);
+  const [inputError, setInputError] = useState(''); // TODO - Move input error to the parent component
   const newLanguageRef = useRef(null);
 
   const handleEditToggle = () => {
@@ -11,11 +12,20 @@ export default function CVLanguages() {
 
   const handleNewLanguage = (event) => {
     newLanguageRef.current = event.target.value;
+    setInputError('');
   }
 
   const addNewLanguage = (event) => {
     event.preventDefault();
     const newLanguage = newLanguageRef.current.trim();
+    if (!newLanguage) {
+      setInputError('Please enter any language.');
+      return;
+    }
+    if (languageSkills.includes(newLanguage)) {
+      setInputError('This language skill already exists.');
+      return;
+    }
     setLanguageSkills([...languageSkills, newLanguage]);
     newLanguageRef.current = '';
   }
@@ -41,6 +51,7 @@ export default function CVLanguages() {
         <form onSubmit={addNewLanguage}>
           <label htmlFor="new-language">New language:</label>
           <input type="text" id='new-language' name='new-language' onChange={handleNewLanguage} />
+          {inputError && <p className="error">{inputError}</p>}
           <button type="submit" className='add-button'>Add language</button>
         </form>
       )}
