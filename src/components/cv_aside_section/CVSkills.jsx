@@ -3,8 +3,8 @@ import { useRef, useState } from 'react';
 export default function CVSkills() {
   const [isEditable, setIsEditable] = useState(false);
   const [skills, setSkills] = useState(['Skill 1', 'Skill 2']);
-  const newSkillRef = useRef(null);
   const [inputError, setInputError] = useState('');
+  const newSkillRef = useRef(null);
 
   const handleEditToggle = () => {
     setIsEditable(!isEditable);
@@ -30,12 +30,21 @@ export default function CVSkills() {
     newSkillRef.current = '';
   }
 
+  const deleteSkill = (index) => {
+    const newSkills = [...skills];
+    newSkills.splice(index, 1);
+    setSkills(newSkills);
+  };
+
   return (
     <section id='skills-section'>
       <h3 className='skills-title'>Skills</h3>
       <ul>
         {skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <li key={index}>
+            {skill}
+            {isEditable && <button type="button" className='remove-button' onClick={() => deleteSkill(index)}>Delete</button> }
+          </li>
         ))}
       </ul>
       {isEditable && (
