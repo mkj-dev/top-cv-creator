@@ -20,12 +20,21 @@ export default function CVLanguages() {
     newLanguageRef.current = '';
   }
 
+  const deleteLanguage = (index) => {
+    const newLanguageSkills = [...languageSkills];
+    newLanguageSkills.splice(index, 1);
+    setLanguageSkills(newLanguageSkills);
+  };
+
   return (
     <section id='languages-section'>
       <h3 className='languages-title'>Languages</h3>
       <ul>
         {languageSkills.map((language, index) => (
-          <li key={index}>{language}</li>
+          <li key={index}>
+            {language}
+            {isEditable && <button type="button" className='remove-button' onClick={() => deleteLanguage(index)}>Delete</button> }
+          </li>
         ))}
       </ul>
       {isEditable && (
