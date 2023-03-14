@@ -59,7 +59,7 @@ export default function CVEducation() {
             <p>{education.institutionName}</p>
             <p>{education.studyDate}</p>
             <p>{education.degreeTitle}</p>
-            <button type="button" className='remove-button' onClick={() => handleDeleteEducation(index)}>Remove entry</button>
+            {isEditable && <button type="button" className='remove-button' onClick={() => handleDeleteEducation(index)}>Remove entry</button>}
           </li>
         ))}
       </ul>

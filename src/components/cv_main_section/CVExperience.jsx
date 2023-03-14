@@ -64,7 +64,7 @@ export default function CVExperience() {
             <p>{workplace.companyName}</p>
             <p>{workplace.employedSinceDate} - {workplace.employedToDate.length > 0 ? workplace.employedToDate : 'Currently'}</p>
             <p>{workplace.jobDescription}</p>
-            <button type="button" className="remove-button" onClick={() => handleDeleteWorkplace(index)}>Remove entry</button>
+            {isEditable && <button type="button" className="remove-button" onClick={() => handleDeleteWorkplace(index)}>Remove entry</button>}
           </li>
         ))}
       </ul>
