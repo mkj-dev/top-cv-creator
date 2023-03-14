@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function CVSkills() {
   const [isEditable, setIsEditable] = useState(false);
   const [skills, setSkills] = useState(['Skill 1', 'Skill 2']);
-  const [skillName, setSkillName] = useState('');
+  const newSkillRef = useRef(null);
 
   const handleEditToggle = () => {
     setIsEditable(!isEditable);
   }
 
   function handleNewSkill(event) {
-    setSkillName(event);
+    newSkillRef.current = event.target.value;
   }
 
-  const addSkill = (skill) => {
-    const newSkill = skill;
+  const addSkill = (event) => {
+    event.preventDefault();
+    const newSkill = newSkillRef.current;
     setSkills([...skills, newSkill]);
   }
 
@@ -27,10 +28,10 @@ export default function CVSkills() {
         ))}
       </ul>
       {isEditable && (
-        <form action="">
+        <form onSubmit={addSkill}>
           <label htmlFor="new-skill">New Skill:</label>
-          <input type="text" id='new-skill' name='new-skill' onChange={e => handleNewSkill(e.target.value)} />
-          <button type="button" className='add-button' onClick={() => addSkill(skillName)}>Add skill</button>
+          <input type="text" id='new-skill' name='new-skill' onChange={handleNewSkill} />
+          <button type="submit" className='add-button'>Add skill</button>
         </form>
       )}
       <button className='edit-button' onClick={handleEditToggle}>{isEditable ? 'Save' : 'Edit'}</button>
