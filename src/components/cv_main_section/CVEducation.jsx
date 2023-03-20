@@ -56,9 +56,9 @@ export default function CVEducation() {
       <ul>
         {educationEntries.map((education, index) => (
           <li key={index}>
-            <p>{education.institutionName}</p>
-            <p>{education.studyDate}</p>
-            <p>{education.degreeTitle}</p>
+            <p className="institution-name">{education.institutionName}</p>
+            <p className="study-date">{education.studyDate}</p>
+            <p className="degree-title">{education.degreeTitle}</p>
             {isEditable && <button type="button" className='remove-button' onClick={() => handleDeleteEducation(index)}>Remove entry</button>}
           </li>
         ))}
