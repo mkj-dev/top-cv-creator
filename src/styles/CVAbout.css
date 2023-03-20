@@ -1,6 +1,7 @@
 .about-title {
   font-size: 1.75rem;
   margin-left: .5rem;
+  border-bottom: 1px solid #000;
 }
 
 .about-para {
