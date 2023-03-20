@@ -2,17 +2,12 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: cadetblue;
 }
 
 .cv-main-section{
-    width: 70%;
-    background-color: thistle;
-    padding: .5rem;
+    width: 100%;
 }
 
 .cv-aside-section {
-    width: 20%;
-    background-color: burlywood;
-    padding: .5rem;
+    width: 30%;
 }
