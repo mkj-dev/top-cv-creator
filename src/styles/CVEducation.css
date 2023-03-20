@@ -1,3 +1,33 @@
-.education-info-edit > form > input {
+.education-title {
+  font-size: 1.75rem;
+  margin-left: .5rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid #000;
+}
+
+.education-section ul {
+  list-style: none;
+  padding-left: .5rem;
+  margin-top: .25rem;
+}
+
+.institution-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.study-date {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.degree-title {
+  margin-top: 0;
+}
+
+.education-info-edit form input {
   display: block;
 }
