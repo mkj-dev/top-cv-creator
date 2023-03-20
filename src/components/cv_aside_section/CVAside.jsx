@@ -2,14 +2,16 @@ import '../../styles/CVAside.css';
 import CVContact from './CVContact';
 import CVLanguages from './CVLanguages';
 import CVSkills from './CVSkills';
+import { useState } from 'react';
 
 export default function CVAside() {
+  const [inputError, setInputError] = useState('');
 
   return (
     <aside id='cv-aside'>
-      <CVContact />
-      <CVSkills />
-      <CVLanguages />
+      <CVContact inputError={inputError} onInputErrorChange={setInputError} />
+      <CVSkills inputError={inputError} onInputErrorChange={setInputError} />
+      <CVLanguages inputError={inputError} onInputErrorChange={setInputError} />
     </aside>
   );
 }
