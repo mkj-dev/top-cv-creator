@@ -61,9 +61,9 @@ export default function CVExperience() {
       <ul>
         {workplaces.map((workplace, index) => (
           <li key={index}>
-            <p>{workplace.companyName}</p>
-            <p>{workplace.employedSinceDate} - {workplace.employedToDate.length > 0 ? workplace.employedToDate : 'Currently'}</p>
-            <p>{workplace.jobDescription}</p>
+            <p className="company-name">{workplace.companyName}</p>
+            <p className="date-of-employment">{workplace.employedSinceDate} - {workplace.employedToDate.length > 0 ? workplace.employedToDate : 'Currently'}</p>
+            <p className="job-description">{workplace.jobDescription}</p>
             {isEditable && <button type="button" className="remove-button" onClick={() => handleDeleteWorkplace(index)}>Remove entry</button>}
           </li>
         ))}
