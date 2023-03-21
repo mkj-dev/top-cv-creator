@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
-export default function CVSkills() {
+export default function CVSkills({ inputError, onInputErrorChange }) {
+
   const [isEditable, setIsEditable] = useState(false);
-  const [skills, setSkills] = useState(['Skill 1', 'Skill 2']);
-  const [inputError, setInputError] = useState('');
-  const newSkillRef = useRef(null);
+  const [skills, setSkills] = useState(["Skill 1", "Skill 2"]);
+  const newSkillRef = useRef("");
 
   const handleEditToggle = () => {
     setIsEditable(!isEditable);
@@ -12,22 +12,22 @@ export default function CVSkills() {
   
   function handleNewSkill(event) {
     newSkillRef.current = event.target.value;
-    setInputError('');
+    onInputErrorChange("");
   }
 
   const addSkill = (event) => {
     event.preventDefault();
     const newSkill = newSkillRef.current.trim();
     if (!newSkill) {
-      setInputError('Please enter a skill name');
+      onInputErrorChange("Please enter a skill name");
       return;
     }
     if (skills.includes(newSkill)) {
-      setInputError('This skill already exists');
+      onInputErrorChange("This skill already exists");
       return;
     }
     setSkills([...skills, newSkill]);
-    newSkillRef.current = '';
+    newSkillRef.current = "";
   }
 
   const deleteSkill = (index) => {
@@ -37,25 +37,25 @@ export default function CVSkills() {
   };
 
   return (
-    <section id='skills-section'>
-      <h3 className='skills-title'>Skills</h3>
+    <section className="skills-section">
+      <h3 className="skills-title">Skills</h3>
       <ul>
         {skills.map((skill, index) => (
           <li key={index}>
             {skill}
-            {isEditable && <button type="button" className='remove-button' onClick={() => deleteSkill(index)}>Delete</button> }
+            {isEditable && <button type="button" className="remove-button" onClick={() => deleteSkill(index)}>Delete</button> }
           </li>
         ))}
       </ul>
       {isEditable && (
         <form onSubmit={addSkill}>
           <label htmlFor="new-skill">New Skill:</label>
-          <input type="text" id='new-skill' name='new-skill' onChange={handleNewSkill} />
+          <input type="text" id="new-skill" name="new-skill" onChange={handleNewSkill} />
           {inputError && <p className="error">{inputError}</p>}
-          <button type="submit" className='add-button'>Add skill</button>
+          <button type="submit" className="add-button">Add skill</button>
         </form>
       )}
-      <button className='edit-button' onClick={handleEditToggle}>{isEditable ? 'Save' : 'Edit'}</button>
+      <button className="edit-button" onClick={handleEditToggle}>{isEditable ? "Save" : "Edit"}</button>
     </section>
   );
 }

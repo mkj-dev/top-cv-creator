@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 
-export default function CVLanguages() {
+export default function CVLanguages({ inputError, onInputErrorChange }) {
+
   const [isEditable, setIsEditable] = useState(false);
-  const [languageSkills, setLanguageSkills] = useState(['English - B2', 'Spanish - A1']);
-  const [inputError, setInputError] = useState(''); // TODO - Move input error to the parent component
-  const newLanguageRef = useRef(null);
+  const [languageSkills, setLanguageSkills] = useState(["English - B2", "Spanish - A1"]);
+  const newLanguageRef = useRef("");
 
   const handleEditToggle = () => {
     setIsEditable(!isEditable);
@@ -12,22 +12,22 @@ export default function CVLanguages() {
 
   const handleNewLanguage = (event) => {
     newLanguageRef.current = event.target.value;
-    setInputError('');
+    onInputErrorChange("");
   }
 
   const addNewLanguage = (event) => {
     event.preventDefault();
     const newLanguage = newLanguageRef.current.trim();
     if (!newLanguage) {
-      setInputError('Please enter any language.');
+      onInputErrorChange("Please enter any language.");
       return;
     }
     if (languageSkills.includes(newLanguage)) {
-      setInputError('This language skill already exists.');
+      onInputErrorChange("This language skill already exists.");
       return;
     }
     setLanguageSkills([...languageSkills, newLanguage]);
-    newLanguageRef.current = '';
+    newLanguageRef.current = "";
   }
 
   const deleteLanguage = (index) => {
@@ -37,25 +37,25 @@ export default function CVLanguages() {
   };
 
   return (
-    <section id='languages-section'>
-      <h3 className='languages-title'>Languages</h3>
+    <section className="languages-section">
+      <h3 className="languages-title">Languages</h3>
       <ul>
         {languageSkills.map((language, index) => (
           <li key={index}>
             {language}
-            {isEditable && <button type="button" className='remove-button' onClick={() => deleteLanguage(index)}>Delete</button> }
+            {isEditable && <button type="button" className="remove-button" onClick={() => deleteLanguage(index)}>Delete</button> }
           </li>
         ))}
       </ul>
       {isEditable && (
         <form onSubmit={addNewLanguage}>
           <label htmlFor="new-language">New language:</label>
-          <input type="text" id='new-language' name='new-language' onChange={handleNewLanguage} />
+          <input type="text" id="new-language" name="new-language" onChange={handleNewLanguage} />
           {inputError && <p className="error">{inputError}</p>}
-          <button type="submit" className='add-button'>Add language</button>
+          <button type="submit" className="add-button">Add language</button>
         </form>
       )}
-      <button className='edit-button' onClick={handleEditToggle}>{isEditable ? 'Save' : 'Edit'}</button>
+      <button className="edit-button" onClick={handleEditToggle}>{isEditable ? "Save" : "Edit"}</button>
     </section>
   );
 }
