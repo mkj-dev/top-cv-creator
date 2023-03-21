@@ -4,10 +4,19 @@
     justify-content: space-around;
 }
 
-.cv-main-section{
+/* CVMain section */
+.cv-main-section {
     width: 100%;
 }
 
+.cv-main-section section[class$='-section'] h3[class$='-title'] {
+    color: #000;
+    font-size: 1.75rem;
+    margin-left: .5rem;
+    border-bottom: 1px solid #000;
+}
+
+/* CVAside section */
 .cv-aside-section {
     width: 30%;
 }
