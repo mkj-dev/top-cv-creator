@@ -8,7 +8,7 @@ export default function CVAside() {
   const [inputError, setInputError] = useState('');
 
   return (
-    <aside id='cv-aside'>
+    <aside className='cv-aside'>
       <CVContact inputError={inputError} onInputErrorChange={setInputError} />
       <CVSkills inputError={inputError} onInputErrorChange={setInputError} />
       <CVLanguages inputError={inputError} onInputErrorChange={setInputError} />
