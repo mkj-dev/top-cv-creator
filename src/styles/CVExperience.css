@@ -1,7 +1,15 @@
+.experience-section ul {
+  list-style: none;
+  padding-left: .5rem;
+  margin-top: .25rem;
+}
+
 .company-name {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0;
+  word-break: break-word;
+  max-width: 80%;
 }
 
 .date-of-employment {
@@ -11,7 +19,8 @@
 }
 
 .job-description {
-  width: 80%;
+  word-break: break-word;
+  max-width: 80%;
 }
 
 .experience-info-edit form input {
