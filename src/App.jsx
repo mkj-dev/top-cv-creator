@@ -5,7 +5,7 @@ import CVMain from './components/CVMain'
 export default function App() {
 
   return (
-    <div className="App">
+    <div className="App" id="resume">
       <CVHeader />
       <CVMain />
     </div>
