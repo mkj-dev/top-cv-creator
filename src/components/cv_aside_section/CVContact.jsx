@@ -4,8 +4,8 @@ export default function CVContact({ inputError, onInputErrorChange }) {
 
   const [isEditable, setIsEditable] = useState(false);
   const [contactInfo, setContactInfo] = useState({
-    mobile: "123456789",
-    email: "your@email.com",
+    mobile: "0123456789",
+    email: "you@example.com",
     linkedin: "https://www.linkedin.com/in/profile",
   });
 
@@ -49,6 +49,7 @@ export default function CVContact({ inputError, onInputErrorChange }) {
             placeholder="Telephone number (required)"
             size={24}
             id="mobile"
+            title="Minimum length of 9, maximum length of 14. Only numbers."
             value={contactInfo.mobile}
             onChange={(event) => handleContactInfoChange(event, "mobile")}
             minLength={9}
@@ -59,7 +60,12 @@ export default function CVContact({ inputError, onInputErrorChange }) {
           <label htmlFor="email">Email:</label>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="you@example.org"
+            size={24}
+            minLength={4}
+            maxLength={64}
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            title="Minimum length of 4, maximum length of 64."
             id="email"
             value={contactInfo.email}
             onChange={(event) => handleContactInfoChange(event, "email")}
