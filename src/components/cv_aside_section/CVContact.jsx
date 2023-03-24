@@ -74,7 +74,11 @@ export default function CVContact({ inputError, onInputErrorChange }) {
           <label htmlFor="linkedin">LinkedIn:</label>
           <input
             type="url"
-            placeholder="LinkedIn profile link"
+            placeholder="https://www.linkedin.com/"
+            pattern="https://.*"
+            size={24}
+            minLength={10}
+            maxLength={80}
             id="linkedin"
             value={contactInfo.linkedin}
             onChange={(event) => handleContactInfoChange(event, "linkedin")}
