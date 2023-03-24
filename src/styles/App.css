@@ -26,6 +26,19 @@ html, body {
     color: #fff;
 }
 
+.toggle-btn,
+.download-pdf-btn {
+    display: block;
+    cursor: pointer;
+    padding: .75rem;
+    width: fit-content;
+    margin: .5rem auto;
+    background-color: #198754;
+    border-radius: 48px;
+    border: transparent;
+    color: #fff;
+}
+
 .error {
     font-size: 1.25rem;
     color: #fff;
