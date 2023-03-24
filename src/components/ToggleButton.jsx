@@ -17,5 +17,5 @@ export default function ToggleButton() {
     }
   }
 
-  return <button type="button" onClick={toggleButtonVisibility}>{buttonVisibility ? 'Show edit buttons' : 'Hide edit buttons'}</button> ;
+  return <button type="button" className="toggle-btn" onClick={toggleButtonVisibility}>{buttonVisibility ? 'Show edit buttons' : 'Hide edit buttons'}</button> ;
 }
