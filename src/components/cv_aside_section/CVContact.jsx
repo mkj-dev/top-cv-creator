@@ -46,10 +46,14 @@ export default function CVContact({ inputError, onInputErrorChange }) {
           <label htmlFor="mobile">Mobile:</label>
           <input
             type="tel"
-            placeholder="Mobile"
+            placeholder="Telephone number (required)"
+            size={24}
             id="mobile"
             value={contactInfo.mobile}
             onChange={(event) => handleContactInfoChange(event, "mobile")}
+            minLength={9}
+            maxLength={14}
+            pattern="\d+"
             required
           />
           <label htmlFor="email">Email:</label>
