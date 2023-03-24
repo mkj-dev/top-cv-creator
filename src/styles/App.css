@@ -17,9 +17,13 @@ html, body {
 .cancel-button {
     cursor: pointer;
     padding: .5rem;
-    width: fit-content;
+    width: 64px;
     margin: .5rem;
     display: block;
+    border-radius: 48px;
+    border: transparent;
+    background-color: #0d6efd;
+    color: #fff;
 }
 
 .error {
