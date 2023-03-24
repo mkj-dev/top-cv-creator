@@ -1,4 +1,8 @@
-#cv-aside [class*='-title'] {
-    color: #000;
-    font-size: 1.5rem;
+.cv-aside [class*='-title'] {
+  margin-bottom: 0;
+}
+
+.contact-section p,
+.contact-section a {
+  margin-left: .5rem;
 }
