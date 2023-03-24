@@ -9,7 +9,7 @@
 
 <body>
 	<div id="root"></div>
-	<button onclick="getPDF()">Download PDF</button>
+	<button onclick="getPDF()" class="download-pdf-btn">Download PDF</button>
 	<script type="module" src="/src/main.jsx"></script>
 </body>
 
@@ -28,7 +28,6 @@
 			jsPDF: {
 				format: 'a4',
 			},
-			imageType: 'image/jpeg',
 			output: './pdf/my_resume.pdf'
 		});
 	}
