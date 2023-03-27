@@ -6,3 +6,9 @@
 .contact-section a {
   margin-left: .5rem;
 }
+
+.contact-icon-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
