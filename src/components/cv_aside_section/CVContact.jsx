@@ -29,7 +29,6 @@ export default function CVContact({ inputError, onInputErrorChange }) {
     }
 
     onInputErrorChange("");
-    console.log("Submitting contact info:", contactInfo);
   }
 
   return (
@@ -39,7 +38,8 @@ export default function CVContact({ inputError, onInputErrorChange }) {
         <>
           <p>Mobile: {contactInfo.mobile}</p>
           <p>Email: {contactInfo.email}</p>
-          <a href={contactInfo.linkedin} target="_blank">LinkedIn Profile</a>
+          {/* TODO: Working profile link in the generated pdf file */}
+          <p>LinkedIn: {contactInfo.linkedin.split('www.')[1]}</p>
         </>
       )}
       {isEditable && (
