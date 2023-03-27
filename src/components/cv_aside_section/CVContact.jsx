@@ -36,10 +36,16 @@ export default function CVContact({ inputError, onInputErrorChange }) {
       <h3 className="contact-title">Contact</h3>
       {!isEditable && (
         <>
-          <p>Mobile: {contactInfo.mobile}</p>
-          <p>Email: {contactInfo.email}</p>
+          <p className="contact-icon-group"><span class="material-symbols-outlined">
+            call
+          </span> {contactInfo.mobile}</p>
+          <p className="contact-icon-group"><span class="material-symbols-outlined">
+            alternate_email
+          </span>{contactInfo.email}</p>
           {/* TODO: Working profile link in the generated pdf file */}
-          <p>LinkedIn: {contactInfo.linkedin.split('www.')[1]}</p>
+          <p className="contact-icon-group"><span class="material-symbols-outlined">
+            person
+          </span>{contactInfo.linkedin.split('www.')[1]}</p>
         </>
       )}
       {isEditable && (
