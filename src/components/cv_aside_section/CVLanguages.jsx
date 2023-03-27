@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useRef } from "react";
 
 export default function CVLanguages({ inputError, onInputErrorChange }) {

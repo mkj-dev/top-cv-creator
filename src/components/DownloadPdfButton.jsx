@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default function DownloadPdfButton() {
   const getPDF = () => {
 		const resume = document.getElementById('resume');

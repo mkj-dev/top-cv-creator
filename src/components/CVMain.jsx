@@ -1,3 +1,4 @@
+// @ts-nocheck
 import '../styles/CVMain.css';
 import CVAbout from './cv_main_section/CVAbout';
 import CVAside from './cv_aside_section/CVAside';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './styles/App.css'
 import CVHeader from './components/CVHeader'
 import CVMain from './components/CVMain'

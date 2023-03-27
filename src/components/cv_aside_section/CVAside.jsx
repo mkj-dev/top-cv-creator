@@ -1,3 +1,4 @@
+// @ts-nocheck
 import '../../styles/CVAside.css';
 import CVContact from './CVContact';
 import CVLanguages from './CVLanguages';
