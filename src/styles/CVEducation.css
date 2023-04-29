@@ -26,4 +26,6 @@
 
 .education-info-edit form input {
   display: block;
+  padding: .5rem;
+  width: 50%;
 }
