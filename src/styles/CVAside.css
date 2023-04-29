@@ -2,6 +2,10 @@
   margin-bottom: 0;
 }
 
+.contact-section form input {
+  padding: .5rem
+}
+
 .contact-section p,
 .contact-section a {
   margin-left: .5rem;
